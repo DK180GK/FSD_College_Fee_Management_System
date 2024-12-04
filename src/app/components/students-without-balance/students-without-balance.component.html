@@ -1,0 +1,30 @@
+<div>
+  <div *ngIf="allStudentsArray.length ; else noStudentWithoutBalance">
+    
+  <table id="students-without-balance">
+      <tr>
+          <th>Student Id</th>
+          <th>Student FirstName</th>
+          <th>Student LastName</th>
+          <th>Total Fees Paid</th>
+          <th>Balance</th>
+          <th>Fee Amount</th>
+        </tr>
+        <tr *ngFor="let student of allStudentsArray |withoutBalanceFilter:fee let i=index">
+          <td>{{student.studentId}}</td>
+          <td>{{student.firstName}}</td>
+          <td>{{student.lastName}}</td>
+          <td>{{student.amountPaid}}</td>
+          <td>{{getBalance(student.amountPaid)}}</td>
+          <td>{{fee}}</td>
+        </tr>
+        
+  </table>
+  
+  
+  </div>
+  <ng-template #noStudentWithoutBalance>
+    <p>There are no students to display!!</p>
+  </ng-template>
+  </div>
+

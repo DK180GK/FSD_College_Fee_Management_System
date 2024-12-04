@@ -1,0 +1,20 @@
+#students-with-balance{
+    border-collapse: collapse;
+}
+#students-with-balance td, #students-with-balance th {
+    /*border: 1px solid #ddd;*/
+    padding: 20px;
+    border-right: none;
+    border-left: none;
+  }
+  
+  #students-with-balance tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #students-with-balance tr:hover {background-color: #ddd;}
+  
+  #students-with-balance th {
+    
+    text-align: left;
+    background-color:rgb(59, 186, 59);
+    color: white;
+  }

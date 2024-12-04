@@ -1,0 +1,46 @@
+.new-student-form-wrapper{
+    height:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+}
+.new-student-form{
+    height:100%;
+    gap:20px;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+}
+.new-student-form >input{
+    padding:10px;
+}
+.new-student-form >button{
+    padding:20px;
+    color:white;
+    background-color: black;
+    border:1px solid black;
+    border-radius:10px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    position: relative;
+    height: 400px;
+    margin-top: 10%;
+    
+  }
+  
+  .centered-element {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

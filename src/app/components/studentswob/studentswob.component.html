@@ -1,0 +1,32 @@
+<h2>Student List</h2>
+<table class="table table-striped" id="students">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Roll Number</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Branch</th>
+      <th>Hostel Fee</th>
+      <th>College Fee</th>
+      <th>Fee Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.id }}</td>
+      <td>{{ student.rollNumber }}</td>
+      <td>{{ student.firstName }}</td>
+      <td>{{ student.lastName }}</td>
+      <td>{{ student.branch }}</td>
+      <td>{{ student.hostelFee }}</td>
+      <td>{{ student.collegeFee }}</td>
+      <td>{{ student.feeStatus }}</td>
+      <td>
+        <button (click)="updateStudent(student.id)" class="btn update-button" style="margin-left: 10px">Update</button>
+        <button (click)="deleteStudent(student.id)" class="btn delete-button" style="margin-left: 10px">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,30 @@
+<div class="new-student-form-wrapper container">
+    <form class="new-student-form centered-element" (ngSubmit)="onSubmit()">
+      <h3>Add New Student</h3>
+      <input type="text" placeholder="Id" [(ngModel)]="Student.id" name="id" required />
+      
+      <!-- Roll Number -->
+      <input type="text" placeholder="Roll Number" [(ngModel)]="Student.rollNumber" name="rollNumber" required />
+  
+      <!-- First Name -->
+      <input type="text" placeholder="First Name" [(ngModel)]="Student.firstName" name="firstName" required />
+  
+      <!-- Last Name -->
+      <input type="text" placeholder="Last Name" [(ngModel)]="Student.lastName" name="lastName" required />
+  
+      <!-- Branch -->
+      <input type="text" placeholder="Branch" [(ngModel)]="Student.branch" name="branch" required />
+  
+      <!-- Hostel Fee -->
+      <input type="number" placeholder="Hostel Fee" [(ngModel)]="Student.hostelFee" name="hostelFee" required />
+  
+      <!-- College Fee -->
+      <input type="number" placeholder="College Fee" [(ngModel)]="Student.collegeFee" name="collegeFee" required />
+  
+      <!-- Fee Status -->
+      <input type="text" placeholder="Fee Status" [(ngModel)]="Student.feeStatus" name="feeStatus" required />
+  
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  

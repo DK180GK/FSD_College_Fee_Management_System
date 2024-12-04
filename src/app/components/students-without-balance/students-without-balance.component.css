@@ -1,0 +1,20 @@
+#students-without-balance{
+    border-collapse: collapse;
+}
+#students-without-balance td, #students-without-balance th {
+    /*border: 1px solid #ddd;*/
+    padding: 20px;
+    border-right: none;
+    border-left: none;
+  }
+  
+  #students-without-balance tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #students-without-balance tr:hover {background-color: #ddd;}
+  
+  #students-without-balance th {
+    
+    text-align: left;
+    background-color:rgb(59, 186, 59);
+    color: white;
+  }

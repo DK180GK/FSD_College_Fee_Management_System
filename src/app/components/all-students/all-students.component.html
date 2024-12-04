@@ -1,0 +1,45 @@
+<div *ngIf="allStudentsArray.length; else noStudent">
+  <table id="students">
+    <tr>
+      <th>Student Id</th>
+      <th>Student FirstName</th>
+      <th>Student LastName</th>
+      <th>Total Fees Paid</th>
+      <th>Balance</th>
+      <th>Fee Amount</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let student of allStudentsArray; let i = index">
+      <td>
+        <input *ngIf="editIndex === i" [(ngModel)]="student.studentId" />
+        <span *ngIf="editIndex !== i">{{student.studentId}}</span>
+      </td>
+      <td>
+        <input *ngIf="editIndex === i" [(ngModel)]="student.firstName" />
+        <span *ngIf="editIndex !== i">{{student.firstName}}</span>
+      </td>
+      <td>
+        <input *ngIf="editIndex === i" [(ngModel)]="student.lastName" />
+        <span *ngIf="editIndex !== i">{{student.lastName}}</span>
+      </td>
+      <td>
+        <input *ngIf="editIndex === i" type="number" [(ngModel)]="student.amountPaid" />
+        <span *ngIf="editIndex !== i">{{student.amountPaid}}</span>
+      </td>
+      <td>{{getBalance(student.amountPaid)}}</td>
+      <td>
+        <input *ngIf="editIndex === i" type="number" [(ngModel)]="fee" />
+        <span *ngIf="editIndex !== i">{{fee}}</span>
+      </td>
+      <td class="buttons">
+        <button (click)="editStudent(i)" *ngIf="editIndex !== i" class="edit-button">Edit</button>
+        <button (click)="updateStudent(i)" *ngIf="editIndex === i" class="update-button">Update</button>
+        <button (click)="deleteStudent(i)" class="delete-button">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<ng-template #noStudent>
+  <p [ngStyle]="{'padding': '10px'}">There are no students to display!</p>
+</ng-template>

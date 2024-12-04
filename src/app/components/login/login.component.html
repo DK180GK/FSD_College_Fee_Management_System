@@ -1,0 +1,30 @@
+<!--Nav bar-->
+<div class="navbar">
+    <div class="navbar-left">
+      <img src="../../../assets/images/Amrita_Vidyalayam_Logo_Icon_Blue.svg.png" alt="Logo" class="logo" />
+      <span class="portal-name">Amrita College</span>
+    </div>
+    <button (click)="goHome()" class="home-button">Home</button>
+  </div>
+
+  
+  <!-- Login Wrapper -->
+  <div class="login-wrapper">
+    <div class="login-container">
+      <!-- Left Side: Logo/Illustration -->
+      <div class="login-left">
+        <img src="../../../assets/images/Homepage_vector.png" alt="Login" class="login-logo" />
+      </div>
+  
+      <!-- Right Side: Login Form -->
+      <form class="login-right">
+        <div *ngIf="loginErrorMessage" class="login-message">{{ loginErrorMessage }}</div>
+        <h1 class="login-title">Login</h1>
+        <input type="email" placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{ standalone: true }" required class="login-input" />
+        <input type="password" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{ standalone: true }" required class="login-input" />
+        <a href="#" (click)="forgotPassword()">Forgot password</a>
+        <button type="submit" class="submit-button" (click)="userLogin()">Login</button>
+      </form>
+    </div>
+  </div>
+  

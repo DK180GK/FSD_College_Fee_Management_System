@@ -1,0 +1,35 @@
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-left">
+      <img src="../../assets/images/Amrita_Vidyalayam_Logo_Icon_Blue.svg.png" alt="Logo" class="logo" />
+      <span class="portal-name">Amrita College</span>
+      
+    </div>
+    <span class="center-text" >Payment Portal</span>
+    <button (click)="backClicked()" class="logout-button">Go Back</button>
+  </div>
+  
+  <!-- Payment Portal Container -->
+  <div class="payment-portal-container">
+    <img src="../../assets/images/Homepage_vector.png" alt="Payment Portal Banner" class="portal-image" />
+  
+
+    <form (submit)="proceedWithPayment()">
+      <div class="payment-options">
+        <label>
+          <input type="radio" name="paymentMethod" value="card" required (change)="onPaymentMethodChange('Card')" />
+          <span>Credit/Debit Card</span>
+        </label>
+        <label>
+          <input type="radio" name="paymentMethod" value="gpay" required (change)="onPaymentMethodChange('Google Pay')" />
+          <span>Google Pay</span>
+        </label>
+        <label>
+          <input type="radio" name="paymentMethod" value="netbanking" required (change)="onPaymentMethodChange('Net Banking')" />
+          <span>Net Banking</span>
+        </label>
+      </div>
+      <button type="submit" class="payment-button">Proceed with Payment</button>
+    </form>
+  </div>
+  

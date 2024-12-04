@@ -1,0 +1,105 @@
+
+<div class="navbar">
+  <div class="navbar-left">
+    <img src="../../assets/images/Amrita_Vidyalayam_Logo_Icon_Blue.svg.png" alt="Logo" class="logo" />
+    <span class="portal-name">Amrita College</span>
+    
+  </div>
+  <span class="center-text" >Payment Portal For {{username | uppercase}}</span>
+  <button (click)="logout()" class="logout-button">Logout</button>
+</div>
+<div class="container">
+  <div class="header">
+    <h2>Student Payment</h2>
+    <div class="header-date">
+      <span>{{ currentDate }}</span>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button [class.active]="selectedTab === 'payments'" (click)="selectTab('payments')">Payments</button>
+    <button [class.active]="selectedTab === 'profile'" (click)="selectTab('profile')">Profile</button>
+  </div>
+
+  <div *ngIf="selectedTab === 'payments'" class="fee-details">
+    <h3>Your Fee Details</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Fee Term</th>
+          <th>Category</th>
+          <th>Remarks</th>
+          <th>Installment</th>
+          <th>Amount</th>
+          <th>Payment Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let fee of fees">
+          <td>{{ fee.term }}</td>
+          <td>{{ fee.category }}</td>
+          <td>{{ fee.remarks }}</td>
+          <td>{{ fee.installment }}</td>
+          <td>{{ fee.amount}}</td>
+          <td>
+            <!-- <button class="status completed">{{ fee.status }}</button> -->
+
+            <button [ngClass]="getButtonClass(fee.status)" [disabled]="isButtonDisabled(fee.status)" (click)="handlePayment(fee)">
+    {{ fee.status === 'Pay' ? 'Pay' : 'Completed' }}
+  </button>
+        
+          </td>
+          <td>
+            <button (click)="downloadReceipt(fee)" class="action-button">
+              <a (click)="printPage()" >Print</a>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="selectedTab === 'profile'" class="profile">
+    <div class="left-profile">
+      <h3>Personal Information</h3>
+      <table>
+        <tr>
+          <th>Student Name:</th>
+          <td>{{username | uppercase}}</td>
+        </tr>
+        <tr>
+          <th>Roll No:</th>
+          <td>AM.EN.U4CSE{{password}}</td>
+        </tr>
+        <tr>
+          <th>Course:</th>
+          <td>B.Tech</td>
+        </tr>
+        <tr>
+          <th>Branch:</th>
+          <td>CSE</td>
+
+        </tr>
+        <tr>
+          <th>Batch:</th>
+          <td>CSE2021 A</td>
+          
+        </tr>
+      </table>
+    </div>
+    <div class="right-profile">
+      <h3>Contact Information</h3>
+      <table>
+        <tr>
+          <th>Email:</th>
+          <td>{{username + "123@gamil.com" | removeWhiteSpace }}</td>
+        </tr>
+        <tr>
+          <th>Mobile:</th>
+          <td>+91 100</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="update-student-container col-md-6 offset-md-3">
+    <h3 class="update-student-header">Update Student</h3>
+    <form (ngSubmit)="onSubmit()" class="update-student-form">
+    
+        <!-- ID Field as the first field -->
+        <div class="form-group">
+            <label for="id" class="form-label">Student ID (Roll Number)</label>
+            <input type="text" class="form-control" id="id" [(ngModel)]="student.id" name="id" />
+        </div>
+
+        <div class="form-group">
+            <label for="rollNumber" class="form-label">Roll Number</label>
+            <input type="text" class="form-control" id="rollNumber" [(ngModel)]="student.rollNumber" name="rollNumber" />
+        </div>
+
+        <div class="form-group">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" [(ngModel)]="student.firstName" name="firstName" />
+        </div>
+
+        <div class="form-group">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" [(ngModel)]="student.lastName" name="lastName" />
+        </div>
+
+        <div class="form-group">
+            <label for="branch" class="form-label">Branch</label>
+            <input type="text" class="form-control" id="branch" [(ngModel)]="student.branch" name="branch" />
+        </div>
+
+        <div class="form-group">
+            <label for="hostelFee" class="form-label">Hostel Fee</label>
+            <input type="text" class="form-control" id="hostelFee" [(ngModel)]="student.hostelFee" name="hostelFee" />
+        </div>
+
+        <div class="form-group">
+            <label for="collegeFee" class="form-label">College Fee</label>
+            <input type="text" class="form-control" id="collegeFee" [(ngModel)]="student.collegeFee" name="collegeFee" />
+        </div>
+
+        <div class="form-group">
+            <label for="feeStatus" class="form-label">Fee Status</label>
+            <input type="text" class="form-control" id="feeStatus" [(ngModel)]="student.feeStatus" name="feeStatus" />
+        </div>
+
+        <button class="btn btn-success submit-btn" type="submit" onclick="(alert('Submited'))">Submit</button>
+    </form>
+</div>
